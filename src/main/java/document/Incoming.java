@@ -1,6 +1,4 @@
-/**
- * Класс "Входящий документ (Incoming)"
- */
+package document;
 
 import java.util.Date;
 
@@ -11,14 +9,16 @@ public class Incoming extends Document
     private String outNumber; //исходящий номер
     private Date outRegDate;  //исходящая дата регистрации
 
+    public Incoming(Integer docRegNum)
+    {
+        super();
+        setDocName("Входящий");
+        setDocRegNum(docRegNum);
+    }
+
     @Override
     public String toString()
     {
-        return "Incoming{" +
-                "sender='" + sender + '\'' +
-                ", recipient='" + recipient + '\'' +
-                ", outNumber='" + outNumber + '\'' +
-                ", outRegDate=" + outRegDate +
-                '}';
+        return getDocName() + "     №" + getDocRegNum() + " от " + getDocRegDate() + " " + getDocText();
     }
 }
