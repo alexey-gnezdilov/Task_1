@@ -3,6 +3,7 @@ package document;
 import interfaces.Storable;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Comparator;
 import java.util.Random;
 
 public abstract class Document implements Comparable<Document>, Storable
@@ -35,6 +36,9 @@ public abstract class Document implements Comparable<Document>, Storable
     @Override
     public int compareTo(Document d)
     {
-        return docName.compareTo(d.docName);
+        return Comparator
+                .comparing(Document::getDocRegNum)
+                //.thenComparing(Document::getDocRegDate)
+                .compare(this, d);
     }
 }

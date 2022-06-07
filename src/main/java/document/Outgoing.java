@@ -8,7 +8,7 @@ public class Outgoing extends Document
     public Outgoing(Integer docRegNum)
     {
         super();
-        setDocName("Исходящий");
+        setDocName("Исход");
         setDocRegNum(docRegNum);
     }
 

@@ -12,7 +12,7 @@ public class Incoming extends Document
     public Incoming(Integer docRegNum)
     {
         super();
-        setDocName("Входящий");
+        setDocName("Входя");
         setDocRegNum(docRegNum);
     }
 

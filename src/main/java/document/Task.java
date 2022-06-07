@@ -13,7 +13,7 @@ public class Task extends Document
     public Task(Integer docRegNum)
     {
         super();
-        setDocName("Поручение");
+        setDocName("Поруч");
         setDocRegNum(docRegNum);
     }
 
