@@ -1,4 +1,8 @@
-package document; /**
+package document;
+
+import java.time.LocalDate;
+
+/**
  * Класс "Поручения (document.Task)"
  */
 
@@ -10,16 +14,19 @@ public class Task extends Document
 //    private String controlSign;     //признак контрольности
 //    private String taskController;  //контролёр поручения
 
-    public Task(Integer docRegNum)
-    {
+    public Task(Integer docRegNum, LocalDate docRegDate, String docText, String DocAuthor) {
         super();
+
         setDocName("Поруч");
         setDocRegNum(docRegNum);
+        setDocRegDate(docRegDate);
+        setDocText(docText);
+        setDocAuthor(DocAuthor);
     }
 
     @Override
-    public String toString()
-    {
-        return getDocName() + "     №" + getDocRegNum() + " от " + getDocRegDate() + " " + getDocText();
+    public String toString() {
+        return getDocAuthor() + ":\n" +
+                getDocName() + "     №" + getDocRegNum() + " от " + getDocRegDate() + " " + getDocText() + "\n";
     }
 }

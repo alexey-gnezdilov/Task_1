@@ -6,6 +6,7 @@ import java.time.Period;
 import java.util.Comparator;
 import java.util.Random;
 
+/** Класс предназначен для хранения документов */
 public abstract class Document implements Comparable<Document>, Storable
 {
     private String    docName;      //название документа
@@ -15,10 +16,30 @@ public abstract class Document implements Comparable<Document>, Storable
     private LocalDate docRegDate;   //дата регистрации документа
     private String    docAuthor;    //автор документа
 
-    public Document()
-    {
-        docRegDate = LocalDate.now().minus(Period.ofDays((new Random().nextInt(365 * 70))));
-        docText = "Рандомный текст";
+    public Document() {}
+
+    public void setDocText(String docText) {
+        this.docText = docText;
+    }
+
+    public void setDocRegDate(LocalDate docRegDate) {
+        this.docRegDate = docRegDate;
+    }
+
+    public String getDocAuthor() {
+        return docAuthor;
+    }
+
+    public void setDocAuthor(String docAuthor) {
+        this.docAuthor = docAuthor;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getDocName() {return docName;}
