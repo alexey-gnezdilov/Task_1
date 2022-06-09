@@ -1,20 +1,24 @@
 package document;
 
-public class Outgoing extends Document
-{
-    private String recipient;      //адресат
-    private String deliveryMethod; //способ доставки
+import java.time.LocalDate;
 
-    public Outgoing(Integer docRegNum)
-    {
+/** Outgoing documents class */
+public class Outgoing extends Document {
+
+    private String recipient;
+    private String deliveryMethod;
+
+    public Outgoing(Integer docRegNum, LocalDate docRegDate, String docText, String docAuthor) {
         super();
         setDocName("Исход");
         setDocRegNum(docRegNum);
+        setDocRegDate(docRegDate);
+        setDocText(docText);
+        setDocAuthor(docAuthor);
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return getDocName() + "     №" + getDocRegNum() + " от " + getDocRegDate() + " " + getDocText();
     }
 }

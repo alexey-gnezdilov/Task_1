@@ -1,24 +1,27 @@
 package document;
 
+import java.time.LocalDate;
 import java.util.Date;
 
-public class Incoming extends Document
-{
-    private String sender;    //отправитель
-    private String recipient; //адресат
-    private String outNumber; //исходящий номер
-    private Date outRegDate;  //исходящая дата регистрации
+/** Incoming documents class */
+public class Incoming extends Document {
 
-    public Incoming(Integer docRegNum)
-    {
+    private String sender;
+    private String recipient;
+    private String outNumber;
+    private Date outRegDate;
+
+    public Incoming(Integer docRegNum, LocalDate docRegDate, String docText, String docAuthor) {
         super();
         setDocName("Входя");
         setDocRegNum(docRegNum);
+        setDocRegDate(docRegDate);
+        setDocText(docText);
+        setDocAuthor(docAuthor);
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return getDocName() + "     №" + getDocRegNum() + " от " + getDocRegDate() + " " + getDocText();
     }
 }

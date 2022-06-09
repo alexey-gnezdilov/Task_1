@@ -2,31 +2,26 @@ package document;
 
 import java.time.LocalDate;
 
-/**
- * Класс "Поручения (document.Task)"
- */
+ /** Task documents class */
+public class Task extends Document {
 
-public class Task extends Document
-{
-//    private Date taskIssueDate;     //дата выдачи поручения
-//    private Date taskExecutionTerm; //срок исполнения поручения
-//    private String respExecutor;    //ответственный исполнитель
-//    private String controlSign;     //признак контрольности
-//    private String taskController;  //контролёр поручения
+//    private Date taskIssueDate;
+//    private Date taskExecutionTerm;
+//    private String respExecutor;
+//    private String controlSign;
+//    private String taskController;
 
-    public Task(Integer docRegNum, LocalDate docRegDate, String docText, String DocAuthor) {
+    public Task(Integer docRegNum, LocalDate docRegDate, String docText, String docAuthor) {
         super();
-
         setDocName("Поруч");
         setDocRegNum(docRegNum);
         setDocRegDate(docRegDate);
         setDocText(docText);
-        setDocAuthor(DocAuthor);
+        setDocAuthor(docAuthor);
     }
 
     @Override
     public String toString() {
-        return getDocAuthor() + ":\n" +
-                getDocName() + "     №" + getDocRegNum() + " от " + getDocRegDate() + " " + getDocText() + "\n";
+        return getDocName() + "     №" + getDocRegNum() + " от " + getDocRegDate() + " " + getDocText();
     }
 }

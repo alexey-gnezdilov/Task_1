@@ -2,19 +2,17 @@ package document;
 
 import interfaces.Storable;
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.Comparator;
-import java.util.Random;
 
-/** Класс предназначен для хранения документов */
-public abstract class Document implements Comparable<Document>, Storable
-{
-    private String    docName;      //название документа
-    private String    id;           //идентификатор документа
-    private String    docText;      //текст документа
-    private Integer   docRegNum;    //регистрационный номер документа
-    private LocalDate docRegDate;   //дата регистрации документа
-    private String    docAuthor;    //автор документа
+/** Documents storing class */
+public abstract class Document implements Comparable<Document>, Storable {
+
+    private String    id;
+    private String    docName;
+    private String    docText;
+    private Integer   docRegNum;
+    private LocalDate docRegDate;
+    private String    docAuthor;
 
     public Document() {}
 
@@ -54,9 +52,10 @@ public abstract class Document implements Comparable<Document>, Storable
 
     public String getDocText(){return docText;}
 
+
+
     @Override
-    public int compareTo(Document d)
-    {
+    public int compareTo(Document d) {
         return Comparator
                 .comparing(Document::getDocRegNum)
                 //.thenComparing(Document::getDocRegDate)
