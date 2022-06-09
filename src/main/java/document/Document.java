@@ -4,7 +4,7 @@ import interfaces.Storable;
 import java.time.LocalDate;
 import java.util.Comparator;
 
-/** Documents storing class */
+/** Documents storing main abstract class */
 public abstract class Document implements Comparable<Document>, Storable {
 
     private String    id;
