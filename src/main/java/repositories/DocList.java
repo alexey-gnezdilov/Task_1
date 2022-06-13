@@ -14,4 +14,8 @@ public class DocList {
     public static ArrayList<Document> getDocList() {
         return docList;
     }
+
+    public static void addDocument(Document document) {
+        docList.add(document);
+    }
 }
