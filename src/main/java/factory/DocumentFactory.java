@@ -3,7 +3,6 @@ package factory;
 import entyties.documents.*;
 import repositories.DocList;
 import repositories.DocTypeList;
-import services.docservice.SortedReport;
 
 public class DocumentFactory {
 
@@ -27,6 +26,6 @@ public class DocumentFactory {
             DocList.addDocument(generateDocument(randomTypeDoc));
         }
 
-        SortedReport.toOutputReport(DocList.getDocList());
+        DocList.toOutputReport();
     }
 }
