@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class DocList {
 
-    private static ArrayList<Document> docList;
+    private static ArrayList<Document> docList;//
     private static ArrayList<Integer> regNumList;
     private static TreeSet<String> authorsSet;
 
