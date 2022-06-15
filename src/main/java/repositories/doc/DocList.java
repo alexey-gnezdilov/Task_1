@@ -2,6 +2,7 @@ package repositories.doc;
 
 import entyties.documents.Document;
 import exceptions.DocumentExistException;
+import org.apache.commons.lang3.RandomUtils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.TreeSet;
@@ -22,14 +23,22 @@ public class DocList {
         return docList;
     }
 
-    public static void addDocument(Document document) throws DocumentExistException {
-        if(!regNumList.contains(document.getRegNum())) {
-            docList.add(document);
-            regNumList.add(document.getRegNum());
-        } else {
-            throw new DocumentExistException();
+    public static void addDocument(Document document) {
+        while (true) {
+            try {
+                if(!regNumList.contains(document.getRegNum())) {
+                    docList.add(document);
+                    regNumList.add(document.getRegNum());
+                    Collections.sort(docList);
+                    break;
+                } else {
+                    throw new DocumentExistException();
+                }
+            } catch (DocumentExistException e) {
+                document.setRegNum(RandomUtils.nextInt(0,3500));
+                System.out.println("A new RegNum has created.");
+            }
         }
-        Collections.sort(docList);
     }
 
     public static void toOutputReport(){

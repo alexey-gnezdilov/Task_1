@@ -20,7 +20,7 @@ public abstract class Document implements Comparable<Document>, Storable {
         id = UUID.randomUUID().toString();
         type = docType;
         text = "Пока просто текст";
-        regNum = RandomUtils.nextInt(0,3500);
+        regNum = RandomUtils.nextInt(0,200);
         regDate = LocalDate.ofEpochDay(RandomUtils.nextInt(0,326)).toString();
         author = DocAuthorsList.authorsList.get(RandomUtils.nextInt(0,19));
     }

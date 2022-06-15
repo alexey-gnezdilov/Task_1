@@ -19,8 +19,8 @@ public class DocumentFactory {
     }
 
 
-    public void createDocuments() throws DocumentExistException {
-        for (int i = 0; i < 20; i++) {
+    public void createDocuments() {
+        for (int i = 0; i < 200; i++) {
             int randomTypeDocIndex = RandomUtils.nextInt(0,2);
             Class randomTypeDoc = DocTypeList.docTypeList.get(randomTypeDocIndex);
             DocList.addDocument(generateDocument(randomTypeDoc));
