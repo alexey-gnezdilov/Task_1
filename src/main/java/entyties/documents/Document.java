@@ -1,8 +1,11 @@
 package entyties.documents;
 
-import services.docservice.RandomGenerate;
+import org.apache.commons.lang3.RandomUtils;
+import repositories.DocAuthors;
 import services.storable.Storable;
+import java.time.LocalDate;
 import java.util.Comparator;
+import java.util.UUID;
 
 public abstract class Document implements Comparable<Document>, Storable {
 
@@ -13,13 +16,13 @@ public abstract class Document implements Comparable<Document>, Storable {
     private String regDate;
     private String author;
 
-    public Document(String type) {
-        id = RandomGenerate.generateRandomID();
-        this.type = type;
+    public Document(String docType) {
+        id = UUID.randomUUID().toString();
+        type = docType;
         text = "Пока просто текст";
-        regNum = RandomGenerate.generateRandomRegNumber();
-        regDate = RandomGenerate.generateRandomRegDate();
-        author = RandomGenerate.generateRandomAuthor();
+        regNum = RandomUtils.nextInt(0,3500);
+        regDate = LocalDate.ofEpochDay(RandomUtils.nextInt(0,326)).toString();
+        author = DocAuthors.authorsList.get(RandomUtils.nextInt(0,19));
     }
 
     public String getId() {

@@ -1,15 +1,15 @@
 package factory;
 
 import entyties.documents.*;
+import exceptions.DocumentExistException;
+import org.apache.commons.lang3.RandomUtils;
 import repositories.DocList;
 import repositories.DocTypeList;
 
 public class DocumentFactory {
 
     public Document generateDocument(Class clazz) {
-
         String docType = clazz.getSimpleName();
-
         return switch (docType) {
             case "Task" -> new Task(docType);
             case "Incoming" -> new Incoming(docType);
@@ -19,14 +19,12 @@ public class DocumentFactory {
     }
 
 
-    public void createDocuments() {
-
+    public void createDocuments() throws DocumentExistException {
         for (int i = 0; i < 20; i++) {
-            int randomTypeDocIndex = (int) ((Math.random() * 3) + 1);
-            Class randomTypeDoc = DocTypeList.docTypeList.get(randomTypeDocIndex - 1);
+            int randomTypeDocIndex = RandomUtils.nextInt(0,2);
+            Class randomTypeDoc = DocTypeList.docTypeList.get(randomTypeDocIndex);
             DocList.addDocument(generateDocument(randomTypeDoc));
         }
-
         DocList.toOutputReport();
     }
 }

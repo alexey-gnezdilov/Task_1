@@ -1,7 +1,5 @@
 package entyties.documents;
 
-import exceptions.DocumentExistException;
-
 public class Task extends Document {
 
     private String issueDate;
@@ -16,7 +14,7 @@ public class Task extends Document {
 
     @Override
     public String toString() {
-        return String.format("%s № %s at %s %s",
+        return String.format("%s     № %s at %s %s",
                 getType(),
                 getRegNum(),
                 getRegDate(),
