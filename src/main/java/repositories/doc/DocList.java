@@ -36,7 +36,7 @@ public class DocList {
                 }
             } catch (DocumentExistException e) {
                 document.setRegNum(RandomUtils.nextInt(0,3500));
-                System.out.println("A new RegNum has created.");
+                //System.out.println("A new RegNum has created.");
             }
         }
     }
