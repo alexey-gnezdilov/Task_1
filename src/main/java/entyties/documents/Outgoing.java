@@ -3,6 +3,7 @@ package entyties.documents;
 import org.apache.commons.lang3.RandomUtils;
 import repositories.inandout.RecipientsList;
 
+
 public class Outgoing extends Document {
 
     private String recipient;
