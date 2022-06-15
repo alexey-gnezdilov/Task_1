@@ -1,5 +1,8 @@
 package entyties.documents;
 
+import org.apache.commons.lang3.RandomUtils;
+import repositories.inandout.RecipientsList;
+
 public class Outgoing extends Document {
 
     private String recipient;
@@ -7,6 +10,8 @@ public class Outgoing extends Document {
 
     public Outgoing(String type) {
         super(type);
+        recipient = RecipientsList.recipientsList.get(RandomUtils.nextInt(0,4));
+        deliveryMethod = RandomUtils.nextInt() % 2 == 0 ? "byEmail" : "byPost";
     }
 
     @Override

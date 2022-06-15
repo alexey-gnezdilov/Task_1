@@ -1,4 +1,4 @@
-package repositories;
+package repositories.doc;
 
 import entyties.documents.Document;
 import exceptions.DocumentExistException;
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class DocList {
 
-    private static ArrayList<Document> docList;//
+    private static ArrayList<Document> docList;
     private static ArrayList<Integer> regNumList;
     private static TreeSet<String> authorsSet;
 
@@ -25,6 +25,7 @@ public class DocList {
     public static void addDocument(Document document) throws DocumentExistException {
         if(!regNumList.contains(document.getRegNum())) {
             docList.add(document);
+            regNumList.add(document.getRegNum());
         } else {
             throw new DocumentExistException();
         }

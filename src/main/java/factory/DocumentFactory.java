@@ -3,8 +3,8 @@ package factory;
 import entyties.documents.*;
 import exceptions.DocumentExistException;
 import org.apache.commons.lang3.RandomUtils;
-import repositories.DocList;
-import repositories.DocTypeList;
+import repositories.doc.DocList;
+import repositories.doc.DocTypeList;
 
 public class DocumentFactory {
 

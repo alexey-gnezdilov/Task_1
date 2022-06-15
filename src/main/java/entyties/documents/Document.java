@@ -1,7 +1,7 @@
 package entyties.documents;
 
 import org.apache.commons.lang3.RandomUtils;
-import repositories.DocAuthors;
+import repositories.doc.DocAuthorsList;
 import services.storable.Storable;
 import java.time.LocalDate;
 import java.util.Comparator;
@@ -22,7 +22,7 @@ public abstract class Document implements Comparable<Document>, Storable {
         text = "Пока просто текст";
         regNum = RandomUtils.nextInt(0,3500);
         regDate = LocalDate.ofEpochDay(RandomUtils.nextInt(0,326)).toString();
-        author = DocAuthors.authorsList.get(RandomUtils.nextInt(0,19));
+        author = DocAuthorsList.authorsList.get(RandomUtils.nextInt(0,19));
     }
 
     public String getId() {

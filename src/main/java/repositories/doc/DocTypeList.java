@@ -1,4 +1,4 @@
-package repositories;
+package repositories.doc;
 
 import entyties.documents.*;
 import java.util.ArrayList;

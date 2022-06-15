@@ -1,9 +1,9 @@
-package repositories;
+package repositories.doc;
 
 import java.util.*;
 import java.util.stream.Stream;
 
-public class DocAuthors {
+public class DocAuthorsList {
 
     public static ArrayList<String> authorsList;
 
