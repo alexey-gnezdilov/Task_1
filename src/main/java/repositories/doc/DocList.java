@@ -51,6 +51,7 @@ public class DocList {
             docList.stream()
                     .filter(doc -> doc.getAuthor().equals(author))
                     .forEach(doc -> System.out.println("  \u2022" + doc));
+            System.out.println();
         }
     }
 }
