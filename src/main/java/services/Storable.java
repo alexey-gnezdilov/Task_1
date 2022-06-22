@@ -1,4 +1,4 @@
-package services.storable;
+package services;
 
 public interface Storable {
 

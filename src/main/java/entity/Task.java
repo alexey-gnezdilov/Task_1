@@ -1,8 +1,7 @@
-package entyties.documents;
+package entity;
 
+import databasesInMemory.persons.PersonsDatabase;
 import org.apache.commons.lang3.RandomUtils;
-import repositories.task.ControllersList;
-import repositories.task.ResponsableExecutorsList;
 
 import java.time.LocalDate;
 
@@ -18,9 +17,9 @@ public class Task extends Document {
         super(type);
         issueDate = LocalDate.ofEpochDay(RandomUtils.nextInt(0,326)).toString();
         executionTerm = String.valueOf(RandomUtils.nextInt(0,30));
-        respExecutor = ResponsableExecutorsList.respExList.get(RandomUtils.nextInt(0,4));
+        respExecutor = PersonsDatabase.persons.get(RandomUtils.nextInt(0,47));
         controlSign = String.valueOf(RandomUtils.nextInt() % 2 == 0 ? true : false);
-        controller = ControllersList.controllersList.get(RandomUtils.nextInt(0,4));
+        controller = PersonsDatabase.persons.get(RandomUtils.nextInt(0,47));
     }
 
     @Override

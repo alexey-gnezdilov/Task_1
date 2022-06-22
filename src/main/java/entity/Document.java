@@ -1,8 +1,8 @@
-package entyties.documents;
+package entity;
 
+import databasesInMemory.persons.PersonsDatabase;
 import org.apache.commons.lang3.RandomUtils;
-import repositories.doc.DocAuthorsList;
-import services.storable.Storable;
+import services.Storable;
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.UUID;
@@ -20,9 +20,9 @@ public abstract class Document implements Comparable<Document>, Storable {
         id = UUID.randomUUID().toString();
         type = docType;
         text = "Пока просто текст";
-        regNum = RandomUtils.nextInt(0,200);
+        regNum = RandomUtils.nextInt(0,5000);
         regDate = LocalDate.ofEpochDay(RandomUtils.nextInt(0,326)).toString();
-        author = DocAuthorsList.authorsList.get(RandomUtils.nextInt(0,19));
+        author = PersonsDatabase.persons.get(RandomUtils.nextInt(0,47));
     }
 
     public String getId() {

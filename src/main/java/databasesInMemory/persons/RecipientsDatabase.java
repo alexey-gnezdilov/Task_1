@@ -1,8 +1,8 @@
-package repositories.inandout;
+package databasesInMemory.persons;
 
 import java.util.ArrayList;
 
-public class RecipientsList {
+public class RecipientsDatabase {
     public static ArrayList<String> recipientsList;
 
     static {

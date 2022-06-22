@@ -1,8 +1,7 @@
-import exceptions.DocumentExistException;
-import factory.DocumentFactory;
+import consoles.MainConsole;
 
 public class Main {
-    public static void main(String[] args) throws DocumentExistException {
-        new DocumentFactory().createDocuments();
+    public static void main(String[] args) {
+        new MainConsole();
     }
 }

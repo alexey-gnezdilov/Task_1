@@ -1,8 +1,8 @@
-package entyties.documents;
+package entity;
 
+import databasesInMemory.persons.PersonsDatabase;
 import org.apache.commons.lang3.RandomUtils;
-import repositories.inandout.RecipientsList;
-import repositories.inandout.SendersList;
+import databasesInMemory.persons.RecipientsDatabase;
 
 public class Incoming extends Document {
 
@@ -13,8 +13,8 @@ public class Incoming extends Document {
 
     public Incoming(String type) {
         super(type);
-        sender = SendersList.sendersList.get(RandomUtils.nextInt(0,4));
-        recipient = RecipientsList.recipientsList.get(RandomUtils.nextInt(0,4));
+        sender = PersonsDatabase.persons.get(RandomUtils.nextInt(0,47));
+        recipient = RecipientsDatabase.recipientsList.get(RandomUtils.nextInt(0,4));
         outNumber = getRegNum();
         outRegDate = getRegDate();
     }

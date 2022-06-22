@@ -1,7 +1,7 @@
-package entyties.documents;
+package entity;
 
 import org.apache.commons.lang3.RandomUtils;
-import repositories.inandout.RecipientsList;
+import databasesInMemory.persons.RecipientsDatabase;
 
 
 public class Outgoing extends Document {
@@ -11,7 +11,7 @@ public class Outgoing extends Document {
 
     public Outgoing(String type) {
         super(type);
-        recipient = RecipientsList.recipientsList.get(RandomUtils.nextInt(0,4));
+        recipient = RecipientsDatabase.recipientsList.get(RandomUtils.nextInt(0,4));
         deliveryMethod = RandomUtils.nextInt() % 2 == 0 ? "byEmail" : "byPost";
     }
 
