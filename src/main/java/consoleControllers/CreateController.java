@@ -12,7 +12,7 @@ import static factory.DocumentFactory.generateDocument;
 import static repository.DocumentsRepo.addDocument;
 import static repository.DocumentsRepo.isDocumentHere;
 
-public class CreateController {
+public class CreateController extends AbstractController{
 
     private static final String MENU_OF_CREATING =
             """
@@ -33,12 +33,8 @@ public class CreateController {
             """;
 
     public static void showDocCreateController() {
-        String selection;
-
         do {
-            System.out.println(MENU_OF_CREATING);
-            System.out.print("Your choice: ");
-            selection = new Scanner(System.in).nextLine();
+            selection = showInputMenu(MENU_OF_CREATING);
 
             switch (selection) {
                 case "1":
@@ -59,12 +55,8 @@ public class CreateController {
 
 
     static void showSingleDocController() {
-        String selection;
-
         do {
-            System.out.println(MENU_OF_TYPES);
-            System.out.print("Your choice: ");
-            selection = new Scanner(System.in).nextLine();
+            selection = showInputMenu(MENU_OF_TYPES);
 
             switch (selection) {
                 case "1":

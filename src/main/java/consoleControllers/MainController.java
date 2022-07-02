@@ -1,12 +1,11 @@
 package consoleControllers;
 
-import java.util.Scanner;
-
+import static consoleControllers.EditController.editDocumentAuthor;
 import static consoleControllers.FindController.findDocument;
 import static consoleControllers.RemoveController.deleteDocument;
 import static consoleControllers.ShowController.showAllDocumentsByAthor;
 
-public class MainController {
+public class MainController extends AbstractController{
 
     private static final String MAIN =
         """
@@ -22,12 +21,8 @@ public class MainController {
         """;
 
     public static void showMainController() {
-        String selection;
-
         do {
-            System.out.println(MAIN);
-            System.out.print("Your choice: ");
-            selection = new Scanner(System.in).nextLine();
+            selection = showInputMenu(MAIN);
 
             switch (selection) {
                     case "1":
@@ -40,6 +35,7 @@ public class MainController {
                         deleteDocument();
                         break;
                     case "4":
+                        editDocumentAuthor();
                         break;
                     case "5":
                         showAllDocumentsByAthor();

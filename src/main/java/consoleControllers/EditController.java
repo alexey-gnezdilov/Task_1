@@ -3,7 +3,7 @@ package consoleControllers;
 import static repository.DocumentsRepo.isListEmpty;
 
 public class EditController extends AbstractController{
-    public static void editDocument() {
+    public static void editDocumentAuthor() {
         if (!isListEmpty()) {
             inputRegNum();
             editing();

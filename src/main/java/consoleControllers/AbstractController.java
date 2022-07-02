@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class AbstractController {
 
+    static String selection;
     static String regNum;
     static Scanner sc = new Scanner(System.in);
     static Document doc;
@@ -26,5 +27,12 @@ public class AbstractController {
 
     static void showDocument(Document document) {
         System.out.println("\nYour document: " + document);
+    }
+
+    static String showInputMenu(String menu) {
+        System.out.println(menu);
+        System.out.print("Your choice: ");
+        selection = new Scanner(System.in).nextLine();
+        return selection;
     }
 }
