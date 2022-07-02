@@ -1,7 +1,13 @@
 package repositories.doc;
 
+import ParserXML.JaxbParser;
+import ParserXML.ParserXml;
+import ParserXML.Person;
 import entyties.documents.Document;
 import exceptions.DocumentExistException;
+
+import javax.xml.bind.JAXBException;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.TreeSet;
@@ -32,7 +38,7 @@ public class DocList {
         Collections.sort(docList);
     }
 
-    public static void toOutputReport(){
+    public static void toOutputReport() {
         authorsSet = docList.stream()
                 .map(Document::getAuthor)
                 .collect(Collectors.toCollection(TreeSet::new));
@@ -43,5 +49,16 @@ public class DocList {
                     .filter(doc -> doc.getAuthor().equals(author))
                     .forEach(doc -> System.out.println("  \u2022" + doc));
         }
+        System.err.println("--------------------------------------------------------------------------");
+        ParserXml parserXml = new JaxbParser();
+        try {
+            Person person = (Person) parserXml.getObject(new File("data.xml"), Person.class);
+
+            System.out.println(person);
+
+        } catch (JAXBException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
