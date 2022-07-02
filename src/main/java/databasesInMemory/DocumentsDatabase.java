@@ -1,15 +1,13 @@
 package databasesInMemory;
 
 import entity.Document;
-
 import java.util.ArrayList;
 import java.util.TreeSet;
 
 public class DocumentsDatabase {
 
-    //наплодить доков
     private static ArrayList<Document> docList;
-    private static TreeSet<Integer> regNumList;
+    private static TreeSet<Long> regNumList;
 
     static {
         docList = new ArrayList<>();
@@ -20,7 +18,7 @@ public class DocumentsDatabase {
         return docList;
     }
 
-    public static TreeSet<Integer> getRegNumList() {
+    public static TreeSet<Long> getRegNumList() {
         return regNumList;
     }
 }

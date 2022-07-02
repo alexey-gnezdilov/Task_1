@@ -2,6 +2,6 @@ package exception;
 
 public class DocumentExistException extends Exception {
     public DocumentExistException() {
-        super("The document already exists.");
+        System.out.println("The document already exists. Try to create another document.");
     }
 }

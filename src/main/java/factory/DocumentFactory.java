@@ -4,13 +4,9 @@ import entity.Document;
 
 public class DocumentFactory {
 
-    public DocumentFactory(Class T) {
-        generateDocument(T);
-    }
-
-    public <T extends Document> T generateDocument(Class T) {
+    public static <T extends Document> T generateDocument(Class T) {
         try {
-            return (T) T.getConstructor().newInstance();
+            return (T) T.getConstructor(String.class).newInstance(T.getSimpleName());
         } catch (Exception e) {
             return null;
         }

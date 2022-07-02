@@ -1,7 +1,7 @@
-import consoles.MainConsole;
+import static consoleControllers.MainController.showMainController;
 
 public class Main {
     public static void main(String[] args) {
-        new MainConsole();
+        showMainController();
     }
 }

@@ -8,7 +8,7 @@ public class Incoming extends Document {
 
     private String sender;
     private String recipient;
-    private Integer outNumber;
+    private Long outNumber;
     private String outRegDate;
 
     public Incoming(String type) {

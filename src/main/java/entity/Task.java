@@ -18,7 +18,7 @@ public class Task extends Document {
         issueDate = LocalDate.ofEpochDay(RandomUtils.nextInt(0,326)).toString();
         executionTerm = String.valueOf(RandomUtils.nextInt(0,30));
         respExecutor = PersonsDatabase.persons.get(RandomUtils.nextInt(0,47));
-        controlSign = String.valueOf(RandomUtils.nextInt() % 2 == 0 ? true : false);
+        controlSign = String.valueOf(RandomUtils.nextInt() % 2 == 0);
         controller = PersonsDatabase.persons.get(RandomUtils.nextInt(0,47));
     }
 

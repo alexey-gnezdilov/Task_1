@@ -1,4 +1,4 @@
-package services;
+package entity.interfaces;
 
 public interface Storable {
 

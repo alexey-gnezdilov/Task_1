@@ -2,7 +2,7 @@ package entity;
 
 import databasesInMemory.persons.PersonsDatabase;
 import org.apache.commons.lang3.RandomUtils;
-import services.Storable;
+import entity.interfaces.Storable;
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.UUID;
@@ -12,7 +12,7 @@ public abstract class Document implements Comparable<Document>, Storable {
     private String id;
     private String type;
     private String text;
-    private Integer regNum;
+    private Long regNum;
     private String regDate;
     private String author;
 
@@ -20,7 +20,7 @@ public abstract class Document implements Comparable<Document>, Storable {
         id = UUID.randomUUID().toString();
         type = docType;
         text = "Пока просто текст";
-        regNum = RandomUtils.nextInt(0,5000);
+        regNum = RandomUtils.nextLong(0,5000);
         regDate = LocalDate.ofEpochDay(RandomUtils.nextInt(0,326)).toString();
         author = PersonsDatabase.persons.get(RandomUtils.nextInt(0,47));
     }
@@ -49,11 +49,11 @@ public abstract class Document implements Comparable<Document>, Storable {
         this.text = text;
     }
 
-    public Integer getRegNum() {
+    public Long getRegNum() {
         return regNum;
     }
 
-    public void setRegNum(Integer regNum) {
+    public void setRegNum(Long regNum) {
         this.regNum = regNum;
     }
 
